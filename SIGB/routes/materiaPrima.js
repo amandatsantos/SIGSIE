@@ -1,0 +1,122 @@
+const express = require('express');
+const pool = require('../db');
+const router = express.Router();
+
+/**
+ * @swagger
+ * /materia-prima:
+ *   post:
+ *     summary: Adiciona uma nova matéria-prima
+ *     tags: [Matéria-Prima]
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *                 example: "material"
+ *               quantidade:
+ *                 type: number
+ *                 example: 100
+ *               unidade:
+ *                 type: string
+ *                 example: "kg"
+ *     responses:
+ *       201:
+ *         description: Matéria-prima adicionada com sucesso
+ *       500:
+ *         description: Erro ao inserir matéria-prima
+ */
+router.post('/', async (req, res) => {
+  const { nome, quantidade, unidade } = req.body;
+  try {
+    const [result] = await pool.query('INSERT INTO materia_prima (nome, quantidade, unidade) VALUES (?, ?, ?)', [nome, quantidade, unidade]);
+    res.status(201).json({ id: result.insertId, nome, quantidade, unidade });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao inserir matéria-prima' });
+  }
+});
+
+/**
+ * @swagger
+ * /materia-prima:
+ *   get:
+ *     summary: Lista todas as matérias-primas
+ *     tags: [Matéria-Prima]
+ *     responses:
+ *       200:
+ *         description: Lista de matérias-primas
+ *       500:
+ *         description: Erro ao buscar matérias-primas
+ */
+router.get('/', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM materia_prima');
+    res.json(rows);
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao buscar matérias-primas' });
+  }
+});
+
+
+/**
+ * @swagger
+ * /materia-prima/{id}:
+ *   put:
+ *     summary: Atualiza uma matéria-prima existente
+ *     tags: [Matéria-Prima]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *         description: ID da matéria-prima a ser atualizada
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               nome:
+ *                 type: string
+ *                 example: "material"
+ *               quantidade:
+ *                 type: number
+ *                 example: 200
+ *               unidade:
+ *                 type: string
+ *                 example: "kg"
+ *     responses:
+ *       200:
+ *         description: Matéria-prima atualizada com sucesso
+ *       404:
+ *         description: Matéria-prima não encontrada
+ *       500:
+ *         description: Erro ao atualizar matéria-prima
+ */
+router.put('/:id', async (req, res) => {
+  const { id } = req.params;
+  const { nome, quantidade, unidade } = req.body;
+
+  try {
+    const [result] = await pool.query(
+      'UPDATE materia_prima SET nome = ?, quantidade = ?, unidade = ? WHERE id = ?',
+      [nome, quantidade, unidade, id]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ error: 'Matéria-prima não encontrada' });
+    }
+
+    res.json({ message: 'Matéria-prima atualizada com sucesso' });
+  } catch (error) {
+    res.status(500).json({ error: 'Erro ao atualizar matéria-prima' });
+  }
+});
+
+module.exports = router;
