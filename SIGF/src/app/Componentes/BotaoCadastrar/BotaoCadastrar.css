@@ -1,0 +1,14 @@
+.button-cadastrar {
+    background-color: #f7e07d; /* Cor de fundo amarela */
+    color: #4b2e2e; /* Cor do texto marrom */
+    padding: 0.5rem 1rem; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 0.5rem; /* Bordas arredondadas */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+    transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+  }
+  
+  .button-cadastrar:hover {
+    background-color: #e6d06c; /* Cor de fundo amarela mais escura ao passar o mouse */
+  }

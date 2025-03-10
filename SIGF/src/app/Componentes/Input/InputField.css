@@ -1,0 +1,34 @@
+.input-field-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-field-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4a5568;
+  }
+  
+  .input-field-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    background-color: #ffffff;
+  }
+  
+  .input-field-wrapper:focus-within {
+    border-color: #6b46c1;
+  }
+  
+  .input-field-icon {
+    color: #6b46c1;
+    margin-right: 0.5rem;
+  }
+  
+  .input-field-input {
+    width: 100%;
+    outline: none;
+    background-color: transparent;
+  }
