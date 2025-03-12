@@ -25,10 +25,18 @@ app.get('/', (req, res) => res.send('API funcionando!'));
 const materiaPrimaRoutes = require('./routes/materiaPrima');
 const produtosRoutes = require('./routes/produtos');
 const fornecedoresRoutes = require('./routes/fornecedores');
+const relatoriosRoutes = require("./routes/relatorios");
+const desempenhoRoutes = require("./routes/desempenho");
+const importacaoRoutes = require("./routes/importacao");
+const metasRoutes = require("./routes/metas");
 
 app.use('/materia-prima', materiaPrimaRoutes);
 app.use('/produtos', produtosRoutes);
 app.use('/fornecedores', fornecedoresRoutes);
+app.use("/relatorios", relatoriosRoutes);
+app.use("/comparar-desempenho", desempenhoRoutes);
+app.use("/importar-dados", importacaoRoutes);
+app.use("/configurar-metas", metasRoutes);
 
 // Iniciar servidor co a s infos
 const PORT = 5560;
