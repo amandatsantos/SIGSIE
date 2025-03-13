@@ -1,8 +1,8 @@
 import "./BotaoCadastrar.css";
 
-export default function ButtonCadastrar({ children }) {
+export default function ButtonCadastrar({ children, onClick }) {
   return (
-    <button type="submit" className="button-cadastrar">
+    <button type="button" className="button-cadastrar" onClick={onClick}>
       {children}
     </button>
   );
