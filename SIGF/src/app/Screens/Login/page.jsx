@@ -19,6 +19,7 @@ function LoginPage() {
 
   return (
     <div className="page-container">
+      <img className="Logo" src="https://i.postimg.cc/m2bhRV32/Design-sem-nome-2-1.png"></img>
     <FormContainer title="Login">
       <form onSubmit={handleSubmit}>
         <div className="form-group">
@@ -37,13 +38,15 @@ function LoginPage() {
             error=""
           />
         </div>
-        <div className="form-group">
+        <div className="ts">
           <ToggleSwitch />
-          <label>Mantenha Conectado</label>
+          <label className="ts-label">Mantenha Conectado</label>
+          <label className="ts-label">Esqueceu a senha?</label>
         </div>
         <div className="form-group">
           <ButtonConfirmar>Entrar</ButtonConfirmar>
         </div>
+        <hr className="divider"></hr>
         <div className="form-group">
           <ButtonCadastrar>Cadastrar</ButtonCadastrar>
         </div>
