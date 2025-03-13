@@ -23,17 +23,17 @@ async function initializeDatabase() {
     await createTables();
   } catch (error) {
     console.error('Erro ao inicializar o banco de dados:', error);
-    process.exit(1); // Finaliza o processo em caso de erro grave
+    process.exit(1); 
   }
 }
 
 async function createTables() {
   try {
     const pool = mysql.createPool({
-      host: DB_HOST || 'localhost',
-      user: DB_USER || 'root',
-      password: DB_PASSWORD || 'root',
-      database:DB_DATABASE|| 'dbsig',
+      host: DB_HOST || "localhost",
+      user: DB_USER || "root",
+      password: DB_PASSWORD || "root",
+      database: DB_DATABASE || "dbsig",
       waitForConnections: true,
       connectionLimit: 10,
       queueLimit: 0,
@@ -44,7 +44,8 @@ async function createTables() {
           id INT AUTO_INCREMENT PRIMARY KEY,
           nome VARCHAR(100) NOT NULL,
           quantidade FLOAT NOT NULL,
-          unidade VARCHAR(20) NOT NULL
+          unidade VARCHAR(20) NOT NULL,
+          periodo VARCHAR(20) NOT NULL
       );
     `);
 
@@ -53,7 +54,8 @@ async function createTables() {
           id INT AUTO_INCREMENT PRIMARY KEY,
           nome VARCHAR(100) NOT NULL,
           descricao TEXT,
-          preco DECIMAL(10,2) NOT NULL
+          preco DECIMAL(10,2) NOT NULL,
+          periodo VARCHAR(20) NOT NULL
       );
     `);
 
@@ -65,12 +67,51 @@ async function createTables() {
       );
     `);
 
-    console.log('Tabelas verificadas/criadas com sucesso!');
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS pedidos (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          fornecedor_id INT NOT NULL,
+          periodo VARCHAR(20) NOT NULL,
+          quantidade INT NOT NULL DEFAULT 1,
+          FOREIGN KEY (fornecedor_id) REFERENCES fornecedores(id) ON DELETE CASCADE
+      );
+    `);
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS consumo_materia_prima (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    materia_prima_id INT NOT NULL,
+    quantidade FLOAT NOT NULL,
+    periodo VARCHAR(20) NOT NULL,
+    FOREIGN KEY (materia_prima_id) REFERENCES materia_prima(id) ON DELETE CASCADE
+);
+    `);
+
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS metas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tipo_meta VARCHAR(50) NOT NULL,  -- Pode ser 'materia-prima', 'fornecedores', etc.
+    valor DECIMAL(10,2) NOT NULL,    -- Valor da meta
+    periodo VARCHAR(20) NOT NULL    -- Período da meta
+);
+
+    `);
+
+    await pool.query(`
+     CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    nivel ENUM('admin', 'usuario') NOT NULL
+);
+    `);
+    console.log("Tabelas verificadas/criadas com sucesso!");
     await pool.end();
   } catch (error) {
-    console.error('Erro ao criar tabelas:', error);
+    console.error("Erro ao criar tabelas:", error);
   }
 }
 
-// Exportar função de inicialização para uso em outros arquivos
 module.exports = initializeDatabase;

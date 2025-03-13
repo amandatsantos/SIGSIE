@@ -1,27 +1,52 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const pool = require('./db');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
 const setupSwagger = require('./swagger'); 
-const initializeDatabase = require('./setupDB'); // esquema do db criado
+const initializeDatabase = require('./setupDB');
+require('dotenv').config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: 'http://localhost:3000', credentials: true })); // Permitir credenciais nas requisições CORS LEMNBRAR DE USAr
 app.use(bodyParser.json());
 
+// Configuração do armazenamento da sessão no MySQL
+const sessionStore = new MySQLStore({
+    host: "localhost",
+    user: "root",
+    password: "root",
+    database:"bdsig",
+    clearExpired: true,
+    checkExpirationInterval: 900000, // 15 minutos
+    expiration: 86400000, // 1 dia
+});
 
-// Inicializar banco de dados e tabelas antes de iniciar o servidor
+app.use(
+  session({
+    key: 'session_cookie_name',
+    secret: 'teste',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false, httpOnly: true, maxAge: 86400000 },
+  })
+);
+
 (async () => {
-    await initializeDatabase();
-  })();
+    try {
+        await initializeDatabase();
+        console.log("Banco de dados inicializado");
+    } catch (error) {
+        console.error("Erro ao iniciar o banco de dados:", error.message);
+    }
+})();
 
-// Configurar Swagger
 setupSwagger(app);
 
-// conferir
 app.get('/', (req, res) => res.send('API funcionando!'));
 
-//  rotas
+// Importação de rotas
 const materiaPrimaRoutes = require('./routes/materiaPrima');
 const produtosRoutes = require('./routes/produtos');
 const fornecedoresRoutes = require('./routes/fornecedores');
@@ -30,6 +55,13 @@ const desempenhoRoutes = require("./routes/desempenho");
 const importacaoRoutes = require("./routes/importacao");
 const metasRoutes = require("./routes/metas");
 
+
+
+
+const authRoutes = require("./routes/auth");
+
+
+app.use("/auth", authRoutes);
 app.use('/materia-prima', materiaPrimaRoutes);
 app.use('/produtos', produtosRoutes);
 app.use('/fornecedores', fornecedoresRoutes);
@@ -38,6 +70,6 @@ app.use("/comparar-desempenho", desempenhoRoutes);
 app.use("/importar-dados", importacaoRoutes);
 app.use("/configurar-metas", metasRoutes);
 
-// Iniciar servidor co a s infos
-const PORT = 5560;
-app.listen(PORT, () => console.log(`Servidor rodando na porta - ${PORT} \n  http://localhost:${PORT} \n swagger -> http://localhost:${PORT}/api-docs`));
+
+const PORT = process.env.PORT || 5665;
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}\nhttp://localhost:${PORT}\nSwagger: http://localhost:${PORT}/api-docs`));

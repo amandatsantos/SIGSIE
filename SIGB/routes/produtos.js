@@ -3,6 +3,18 @@ const pool = require('../db');
 const router = express.Router();
 
 /**
+ * Função para calcular o período automaticamente
+ * Formato: "YYYY-TX" (exemplo: "2024-T1" para o primeiro trimestre de 2024)
+ */
+const getPeriodo = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth() + 1; // Janeiro é 0, então somamos 1
+  const trimestre = Math.ceil(month / 3); // Divide os meses em 4 trimestres
+  return `${year}-T${trimestre}`;
+};
+
+/**
  * @swagger
  * /produtos:
  *   post:
@@ -32,9 +44,15 @@ const router = express.Router();
  */
 router.post('/', async (req, res) => {
   const { nome, descricao, preco } = req.body;
+  const periodo = getPeriodo(); // Obtendo período automaticamente
+
   try {
-    const [result] = await pool.query('INSERT INTO produtos (nome, descricao, preco) VALUES (?, ?, ?)', [nome, descricao, preco]);
-    res.status(201).json({ id: result.insertId, nome, descricao, preco });
+    const [result] = await pool.query(
+      "INSERT INTO produtos (nome, descricao, preco, periodo) VALUES (?, ?, ?, ?)", 
+      [nome, descricao, preco, periodo]
+    );
+    
+    res.status(201).json({ id: result.insertId, nome, descricao, preco, periodo });
   } catch (error) {
     res.status(500).json({ error: 'Erro ao inserir produto' });
   }
@@ -117,7 +135,5 @@ router.put('/:id', async (req, res) => {
     res.status(500).json({ error: 'Erro ao atualizar produto' });
   }
 });
-
-
 
 module.exports = router;
