@@ -1,6 +1,5 @@
 import { FaUser } from "react-icons/fa";
 import "./InputField.css";
-import ErrorMessage from "./ErrorMessage";
 
 export default function InputField({ label, placeholder, Icon = FaUser, error }) {
   return (
@@ -14,7 +13,6 @@ export default function InputField({ label, placeholder, Icon = FaUser, error })
           className="input-field-input"
         />
       </div>
-      <ErrorMessage message={error} />
     </div>
   );
 }
