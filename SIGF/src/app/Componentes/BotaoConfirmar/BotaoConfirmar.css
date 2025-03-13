@@ -1,5 +1,5 @@
 .button-confirmar {
-  width: 40%; /* Ajuste conforme necessário */
+  width: 35%; /* Ajuste conforme necessário */
   max-width: 250px; /* Define um limite para o tamanho */
   margin: 5px auto; /* Centraliza os botões */
   display: block;
@@ -8,7 +8,7 @@
   font-family: 'Spectral', serif;
   font-size: 12px !important;
   border: none;
-  padding: 10px 20px;
+  padding: 7px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;

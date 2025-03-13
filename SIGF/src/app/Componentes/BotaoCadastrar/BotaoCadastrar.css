@@ -1,14 +1,14 @@
 .button-cadastrar {
-  width: 40%; /* Ajuste conforme necessário */
+  width: 35%; /* Ajuste conforme necessário */
   max-width: 250px; /* Define um limite para o tamanho */
   margin: 5px auto; /* Centraliza os botões */
   display: block;
-  background-color: #5a3826;
+  background-color: #EFD973;
   color: white;
   font-family: 'Spectral', serif;
   font-size: 12px !important;
   border: none;
-  padding: 10px 20px;
+  padding: 7px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
@@ -16,5 +16,5 @@
   transition: background 0.3s ease;
 }
 .button-cadastrar:hover {
-  background-color: #3e2519;
+  background-color: #D4C35D;
 }
