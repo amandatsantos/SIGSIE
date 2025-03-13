@@ -1,0 +1,39 @@
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #f7e7d4; /* Cor de fundo principal */
+    background-image: 
+        url('https://i.postimg.cc/90ptcCXw/Adobe-Express-file.png'), 
+        url('https://i.postimg.cc/KvT8d1gD/Adobe-Express-file-1.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
+        top right, 
+        bottom left;
+    background-size: 500px auto;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}

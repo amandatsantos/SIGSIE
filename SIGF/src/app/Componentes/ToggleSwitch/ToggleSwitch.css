@@ -1,33 +1,25 @@
 .toggle-switch-container {
-    position: relative;
-    width: 3rem;
-    height: 1.5rem;
-    display: flex;
-    align-items: center;
-    border-radius: 9999px;
-    padding: 0.25rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .toggle-switch-container.on {
-    background-color: #6b46c1;
-  }
-  
-  .toggle-switch-container.off {
-    background-color: #a0aec0;
-  }
-  
-  .toggle-switch-knob {
-    width: 1.25rem;
-    height: 1.25rem;
-    background-color: #ffffff;
-    border-radius: 9999px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transform: translateX(0);
-    transition: transform 0.3s;
-  }
-  
-  .toggle-switch-knob.on {
-    transform: translateX(1.5rem);
-  }
+  width: 50px;
+  height: 24px;
+  background-color: #ccc;
+  border-radius: 24px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-switch-knob {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  transition: transform 0.3s;
+}
+.toggle-switch-container.on {
+  background-color: #5a3826;
+}
+.toggle-switch-container.on .toggle-switch-knob {
+  transform: translateX(26px);
+}
