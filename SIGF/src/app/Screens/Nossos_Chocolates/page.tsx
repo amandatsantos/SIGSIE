@@ -93,7 +93,7 @@ export default function NossosChocolates() {
   };
 
   const handleLoginClick = () => {
-    router.push('/Screens/login');
+    router.push('/Screens/Login');
   };
 
   const handleLogoClick = () => {
