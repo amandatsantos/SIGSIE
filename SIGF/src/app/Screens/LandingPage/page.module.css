@@ -1,0 +1,137 @@
+/* Estilos para o Swiper */
+.customSwiper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.carouselImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+/* Estilos para a paginação e navegação */
+.swiper-pagination-bullet {
+  background: #EFD973; /* Cor dos bullets */
+}
+
+.swiper-pagination-bullet-active {
+  background: #451E04; /* Cor do bullet ativo */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #451E04; /* Cor das setas de navegação */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #EFD973;
+  position: relative;
+  max-height: 70px; /* Altura máxima do header */
+}
+
+.logo img {
+  height: 110px; /* Aumente o tamanho da logo */
+  width: auto; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Garante que a imagem não distorça */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center; /* Centraliza os itens do menu */
+}
+
+.loginButton {
+  padding: 0.75rem 1.5rem; /* Botão um pouco maior */
+  background-color: #451E04;
+  border: none;
+  border-radius: 8px; /* Raio de borda de 8px */
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem; /* Posiciona o botão no canto direito */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  color: #451E04; /* Cor igual ao botão de login */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.searchContainer {
+  width: 100%;
+  padding: 1rem;
+  text-align: right;
+  padding-right: 12rem;
+}
+
+.searchWrapper {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.searchIcon {
+  color: #451E04; /* Cor do ícone igual ao botão de login */
+  margin-right: 0.5rem;
+}
+
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #451E04; /* Cor do texto igual ao botão de login */
+  width: 200px; /* Largura da caixa de pesquisa */
+  background-color: transparent; /* Remove o fundo da caixa de texto */
+}
+
+
+.searchInput::placeholder {
+  color: #451E04; /* Cor do placeholder igual ao botão de login */
+}
+
+
+.main {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.hero {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.carouselImage {
+  width: 90%; /* Reduz o tamanho da imagem */
+  height: auto;
+}
