@@ -1,5 +1,5 @@
 "use client";
-
+import Link from 'next/link';
 import React, { useState, useEffect } from "react";
 import { register } from 'swiper/element/bundle';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,11 +9,14 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import styles from './page.module.css';
 import SearchIcon from '@mui/icons-material/Search';
+import { useRouter } from 'next/navigation';
 
 register();
 
 export default function Home() {
   const [slidesPerView, setSlidesPerView] = useState(1); // Inicialmente, 1 slide por visualização
+    const [searchTerm, setSearchTerm] = useState('');
+    const router = useRouter();
 
   const carouselImages = [
     '/Carrossel 1.png',
@@ -21,6 +24,19 @@ export default function Home() {
     '/Carrossel 3.png',
     '/Carrossel 4.png'
   ];
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleLoginClick = () => {
+    router.push('/Screens/Login');
+  };
+
+  const handleLogoClick = () => {
+    router.push('/Screens/LandingPage');
+  };
+
 
   useEffect(() => {
     function handleResize() {
@@ -40,19 +56,19 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container} style={{ backgroundImage: "url('/Background.png')", backgroundSize: 'cover' }}>
-      <header className={styles.header}>
-        <div className={styles.logo}>
+    <div className={styles.container} style={{ backgroundImage: "url('/background_landingpage.png' )", }}>
+       <header className={styles.header}>
+        <div className={styles.logo} onClick={handleLogoClick}>
           <img src='/Logo 2.png' alt="Logo" />
         </div>
         <nav className={styles.nav}>
           <ul className={styles.menu}>
-            <li>Nossos Chocolates</li>
+            <li><Link href="/Screens/Nossos_Chocolates">Nossos Chocolates</Link></li>
             <li>Seja um Revendedor</li>
             <li>Trabalhe Conosco</li>
           </ul>
         </nav>
-        <button className={styles.loginButton}>Login</button>
+        <button className={styles.loginButton} onClick={handleLoginClick}>Login</button>
       </header>
 
       <div className={styles.searchContainer}>
