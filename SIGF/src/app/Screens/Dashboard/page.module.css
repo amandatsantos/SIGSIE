@@ -337,3 +337,11 @@
 .editBtn:hover, .addBtn:hover {
   opacity: 0.85;
 }
+.circle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0px;
+  margin: 20px;
+  color: black;
+}

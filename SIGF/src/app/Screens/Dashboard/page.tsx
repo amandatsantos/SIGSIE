@@ -1,6 +1,7 @@
 'use client';
 import styles from './page.module.css';
 import { useRouter } from 'next/navigation';
+import CircularChart from '../../Componentes/CircularChart/CircularChart';
 
 export default function Dashboard() {
     const router = useRouter();
@@ -107,6 +108,28 @@ export default function Dashboard() {
                             <button className={styles.editBtn}>Editar</button>
                         </div>
                         <button className={styles.addBtn}>Adicionar</button>
+                    </div>
+                </div>
+                <div className={styles.welcome}>
+                    Métricas
+                </div >
+                <div className={styles.circle} >
+                    <div>
+                        <h4 >Quantidade de produtos</h4>
+                        <div><CircularChart percentage={52} color="#E3B23C" /></div>
+
+                    </div>
+                    <div>
+                        <h4>Quantidade de Vendas no mês</h4>
+                        <CircularChart percentage={10} color="#36A832" />
+                    </div>
+                    <div>
+                        <h4>Quantidade de Vendas no ano</h4>
+                        <CircularChart percentage={45} color="#5A1E51" />
+                    </div>
+                    <div>
+                        <h4>Quantidade de Estoque</h4>
+                        <CircularChart percentage={70} color="#814DDE" />
                     </div>
                 </div>
             </div>
