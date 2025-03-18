@@ -1,0 +1,25 @@
+.toggle-switch-container {
+  width: 25px; /* Metade do tamanho original */
+  height: 12px; /* Metade do tamanho original */
+  background-color: #ccc;
+  border-radius: 12px; /* Metade do tamanho original */
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-switch-knob {
+  width: 9px; /* Metade do tamanho original */
+  height: 9px; /* Metade do tamanho original */
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5px; /* Metade do tamanho original */
+  left: 2px; /* Metade do tamanho original */
+  transition: transform 0.3s;
+}
+.toggle-switch-container.on {
+  background-color: #5a3826;
+}
+.toggle-switch-container.on .toggle-switch-knob {
+  transform: translateX(13px); /* Metade do tamanho original */
+}
