@@ -2,11 +2,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100%;
   background-size: cover;
   background-position: center;
   background-color: #FFFBF3;
 }
+.main-container {
+  min-height: 100vh; /* Faz com que o conteúdo ocupe pelo menos a altura da tela */
+  background-color: white;
+}
+
 
 .header {
   display: flex;
@@ -65,10 +70,9 @@
 .welcome {
   font-family: Spectral;
   color: #451E04;
-  cursor: pointer;
   font-size: 48px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 700px;
   margin-right: 930px;
   margin-top: 20px;
 }
@@ -80,7 +84,7 @@
   border: none;
   margin-top: 20px;
   width: 97vw;
-  height: 97vh;
+  height: 90%;
   padding: 20px;
 }
 .title{
@@ -105,7 +109,7 @@
   margin-right: 28px;
 }
 .button2:hover{
-  outline: 2px solid #8B4513;
+  background-color: #e7d3c4;
   border-radius: 12px;
 }
 
@@ -258,4 +262,78 @@
   background: transparent;
   outline: none;
   flex: 1;
+}
+/* Estilo do Container */
+.conta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Estilo dos Cards */
+.card {
+  border: 2px solid #5a2a60;
+  color: black;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalhos personalizados */
+.hea {
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Cores específicas dos cabeçalhos */
+#producao {
+  background-color: #f0c040; /* Amarelo */
+}
+
+#vendas {
+  background-color: #3bb273; /* Verde */
+}
+
+#estoque {
+  background-color: #9b59b6; /* Roxo */
+}
+
+/* Texto dos Parágrafos */
+.p {
+  margin: 0.5rem 0;
+}
+
+.span {
+  font-weight: bold;
+}
+
+/* Botões */
+.editBtn {
+  background-color: #5a2a60;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+
+.addBtn {
+  background-color: #ff1493; /* Rosa */
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.editBtn:hover, .addBtn:hover {
+  opacity: 0.85;
 }

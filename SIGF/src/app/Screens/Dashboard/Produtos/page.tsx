@@ -27,10 +27,10 @@ export default function Produtos() {
     const [selectedProdutos, setSelectedProdutos] = useState(null);
 
     const [produtos, setProdutos] = useState([
-        { id: 1, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'Cacau Show', categoria: '1.000', preco: 'R$ 720,00' },
-        { id: 2, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'Cacau Show', categoria: '1.000', preco: 'R$ 720,00' },
-        { id: 3, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'Cacau Show', categoria: '1.000', preco: 'R$ 720,00' },
-        { id: 4, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'Cacau Show', categoria: '1.000', preco: 'R$ 720,00' },
+        { id: 1, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'R$333,00', categoria: '1.000', preco: 'R$ 720,00' },
+        { id: 2, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'R$33,00', categoria: '2.000', preco: 'R$ 720,00' },
+        { id: 3, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'R$355,00', categoria: '66.000', preco: 'R$ 720,00' },
+        { id: 4, nome: 'Chocolate', ingredientes: '75% cacau', custo: 'R$45,00', categoria: '2.000', preco: 'R$ 720,00' },
     ]);
     const handleEditClick = (produtos) => {
         setSelectedProdutos(produtos);
