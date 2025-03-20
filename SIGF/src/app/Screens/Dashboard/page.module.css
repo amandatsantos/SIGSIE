@@ -1,0 +1,217 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #EFD973;
+  position: relative;
+  max-height: 70px;
+}
+
+.logo img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.loginButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #451E04;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  font-size: 1rem;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  color: #451E04;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.main {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.dashboardHeader {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.welcomeMessage {
+  color: #451E04;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tituloDashboard {
+  color: #451E04;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtituloDashboard {
+  color: #451E04;
+  font-size: 1.2rem;
+}
+
+.fornecedoresContainer {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.tituloSecao {
+  color: #451E04;
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.searchAddContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.searchIcon {
+  color: #451E04;
+  margin-right: 0.5rem;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #451E04;
+  width: 200px;
+  background-color: transparent;
+}
+
+.addButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #550338;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.tableWrapper {
+  border: 1.5px solid #FFB16F;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: black;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  color: #451E04;
+}
+
+.rowEven {
+  background-color: #FFF2D9;
+}
+
+.rowOdd {
+  background-color: #FFFEFC;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #550338;
+  margin: 0 5px;
+}
+
+.actionButton:hover {
+  color: #5a2a0a;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+.paginationText {
+  color: black; /* Cor do texto ajustada para preto */
+}
+
+.pagination button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #451E04;
+}
+
+.pagination button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pageInput {
+  width: 50px;
+  padding: 0.25rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
