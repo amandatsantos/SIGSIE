@@ -107,6 +107,17 @@ async function createTables() {
     nivel ENUM('admin', 'usuario') NOT NULL
 );
     `);
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS relatorio (
+     id INT AUTO_INCREMENT PRIMARY KEY,
+     venda int,
+     estoque int,
+     producao int,
+     faturamento int
+ );
+     `);
+    
     console.log("Tabelas verificadas/criadas com sucesso!");
     await pool.end();
   } catch (error) {
