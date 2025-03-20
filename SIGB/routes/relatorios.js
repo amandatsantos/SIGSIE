@@ -32,7 +32,7 @@ const updateField = async (req, res, field) => {
   try {
     const query = `
       UPDATE relatorio 
-      SET ${field} = ?
+      SET ${field} = ${field} + ?
       WHERE id = 1
     `;
     await pool.query(query, [value]);
