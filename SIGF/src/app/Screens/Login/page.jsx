@@ -15,10 +15,18 @@ function LoginPage() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    console.log("Enviando login...");
+  
     const formData = new FormData(event.target);
     const email = formData.get("email");
     const password = formData.get("password");
+<<<<<<< HEAD
 
+=======
+  
+    console.log("Dados coletados:", { email, password });
+  
+>>>>>>> 246b9e2a3cc321c4d3a0bb475b45b2b371f0782e
     try {
       const response = await fetch("http://localhost:5665/auth/login", {
         method: "POST",
@@ -27,6 +35,7 @@ function LoginPage() {
         },
         body: JSON.stringify({ email, password }),
       });
+<<<<<<< HEAD
 
       const data = await response.json();
 
@@ -38,6 +47,22 @@ function LoginPage() {
     } catch (err) {
       console.error("Erro ao fazer login:", err);
       alert("Erro ao fazer login!")
+=======
+  
+      console.log("Resposta recebida:", response);
+  
+      if (!response.ok) {
+        throw new Error("Erro ao fazer login");
+      }
+  
+      const data = await response.json();
+      console.log("Login bem-sucedido:", data);
+  
+      // Redireciona para o dashboard após o login
+      router.push("/dashboard");
+    } catch (error) {
+      console.error("Erro:", error.message);
+>>>>>>> 246b9e2a3cc321c4d3a0bb475b45b2b371f0782e
     }
   }
 

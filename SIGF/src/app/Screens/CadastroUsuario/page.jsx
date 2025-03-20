@@ -17,10 +17,27 @@ function CadastroUsuarioPage() {
     const cpfCnpj = formData.get('cpfCnpj');
     const nascimento = formData.get('nascimento');
     const telefone = formData.get('telefone');
-    console.log({ nome, cpfCnpj, nascimento, telefone });
 
-    // Redireciona para o Login após o cadastro:
-    router.push("/Screens/Login");
+    // Envia os dados para o backend
+    fetch('localhost:5665/auth/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ nome, cpfCnpj, nascimento, telefone }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Usuário cadastrado com sucesso!');
+          // Redireciona para o Login após o cadastro
+          router.push("/Screens/Login");
+        } else {
+          console.error('Erro ao cadastrar usuário');
+        }
+      })
+      .catch((error) => {
+        console.error('Erro na requisição:', error);
+      });
   }
 
   return (
@@ -63,6 +80,7 @@ function CadastroUsuarioPage() {
           </div>
           <div className="form-group">
             <ButtonCadastrar onClick={() => router.push("/Screens/Login")}>Cadastrar</ButtonCadastrar>
+            {/**<ButtonCadastrar type="submit">Cadastrar</ButtonCadastrar>*/}
           </div>
         </form>
       </FormContainer>
