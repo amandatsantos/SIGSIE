@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import { useRouter } from "next/navigation"; // ← Importar o router do Next
@@ -12,17 +12,48 @@ import "./style.css";
 function LoginPage() {
   const router = useRouter(); // ← Inicializa o router
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
+    console.log("Enviando login...");
+  
     const formData = new FormData(event.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
-    console.log({ email, password });
+    const email = formData.get("email");
+    const password = formData.get("password");
+  
+    console.log("Dados coletados:", { email, password });
+  
+    try {
+      const response = await fetch("http://localhost:5665/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+  
+      console.log("Resposta recebida:", response);
+  
+      if (!response.ok) {
+        throw new Error("Erro ao fazer login");
+      }
+  
+      const data = await response.json();
+      console.log("Login bem-sucedido:", data);
+  
+      // Redireciona para o dashboard após o login
+      router.push("/dashboard");
+    } catch (error) {
+      console.error("Erro:", error.message);
+    }
   }
 
   return (
     <div className="page-container">
-      <img className="Logo" src="https://i.postimg.cc/m2bhRV32/Design-sem-nome-2-1.png" alt="Logo" />
+      <img
+        className="Logo"
+        src="https://i.postimg.cc/m2bhRV32/Design-sem-nome-2-1.png"
+        alt="Logo"
+      />
 
       <FormContainer title="Login">
         <form onSubmit={handleSubmit}>
@@ -39,6 +70,7 @@ function LoginPage() {
               label="Senha"
               placeholder="Digite sua senha"
               name="password"
+              type="password"
               error=""
             />
           </div>
@@ -58,8 +90,9 @@ function LoginPage() {
           </div>
           <hr className="divider" />
           <div className="form-group">
-            <ButtonCadastrar onClick={() => router.push("/Screens/CadastroUsuario")
-}>
+            <ButtonCadastrar
+              onClick={() => router.push("/Screens/CadastroUsuario")}
+            >
               Cadastrar
             </ButtonCadastrar>
           </div>
