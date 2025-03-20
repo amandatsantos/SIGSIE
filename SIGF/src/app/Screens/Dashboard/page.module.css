@@ -1,228 +1,217 @@
-/* Layout Principal */
 .container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   min-height: 100vh;
-  background-color: #eee9de;
-  padding: 20px;
+  background-color: white;
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-/* Tabela */
-.tableSection {
-  background: rgb(201, 165, 165);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.tabela {
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
-  border-collapse: collapse;
-}
-
-.tabela th {
-  background-color: #f8f5f0;
-  padding: 12px;
-  text-align: left;
-}
-
-.tabela td {
-  padding: 12px;
-  border-bottom: 1px solid #9b8686;
-}
-
-.actions {
-  display: flex;
-  gap: 10px;
-}
-
-.icon {
-  cursor: pointer;
-  color: #5a1a4a;
-  transition: color 0.2s;
-}
-
-.icon:hover {
-  color: #bb649e;
-}
-
-/* Metas e Métricas */
-.metricsSection {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.sectionTitle {
-  color: #af7497;
-  margin-bottom: 15px;
-  font-size: 1.4rem;
-}
-
-.metasGrid, .metricsGrid {
-  display: grid;
-  gap: 15px;
-}
-
-.metaBox {
-  background: rgb(201, 173, 173);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  padding: 1rem;
+  background-color: #EFD973;
   position: relative;
-  overflow: hidden;
+  max-height: 70px;
 }
 
-.metaBox h3 {
-  margin: -20px -20px 15px -20px;
-  padding: 15px 20px;
-  background-color: #e7d8bc;
-  color: #8a657b;
+.logo img {
+  height: 110px;
+  width: auto;
+  object-fit: contain;
+  cursor: pointer;
 }
 
-.metaContent {
-  display: grid;
-  gap: 10px;
-}
-
-.metaItem {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.metaActions {
-  margin-top: 15px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.btnEdit {
-  background: none;
-  border: 1px solid #332c2c;
-  padding: 6px 12px;
-  border-radius: 20px;
+.nav {
   display: flex;
   align-items: center;
-  gap: 6px;
-  transition: all 0.2s;
-}
-
-.btnEdit:hover {
-  background-color: #2e281d;
-}
-
-/* Métricas */
-.metricCard {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
-
-.metricHeader {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: 500;
-}
-
-.progressBar {
-  height: 8px;
-  background: #8f7979;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.progressFill {
-  height: 100%;
-  border-radius: 4px;
-  transition: width 0.3s ease;
-}
-
-.legend {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.legendItem {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.legendDot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-/* Responsividade */
-@media (max-width: 1200px) {
-  .gridContainer {
-      grid-template-columns: 1fr;
-  }
-  
-  .metricsSection {
-      grid-template-columns: 1fr;
-  }
-}
-/* Navbar */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #550338;
-  color: rgb(177, 148, 148);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-
-.brand {
-  font-family: 'Spectral', serif;
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.navCenter {
   flex-grow: 1;
-  text-align: center;
+  justify-content: center;
 }
 
-.activeLink {
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
-  border-bottom: 2px solid #EFD973;
+.loginButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #451E04;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  font-size: 1rem;
 }
 
-.navRight {
+.menu {
+  list-style: none;
   display: flex;
   gap: 2rem;
+  margin: 0;
+  padding: 0;
 }
 
-.navLink {
+.menu li {
+  color: #451E04;
   cursor: pointer;
-  transition: color 0.3s;
+  font-size: 18px;
 }
 
-.navLink:hover {
-  color: #EFD973;
+.main {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
 }
 
-/* Ajuste no container principal */
-.container {
-  padding-top: 70px; /* Altura da navbar */
+.dashboardHeader {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.welcomeMessage {
+  color: #451E04;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tituloDashboard {
+  color: #451E04;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.subtituloDashboard {
+  color: #451E04;
+  font-size: 1.2rem;
+}
+
+.fornecedoresContainer {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.tituloSecao {
+  color: #451E04;
+  font-size: 2rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.searchAddContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.searchIcon {
+  color: #451E04;
+  margin-right: 0.5rem;
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #451E04;
+  width: 200px;
+  background-color: transparent;
+}
+
+.addButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #550338;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.tableWrapper {
+  border: 1.5px solid #FFB16F;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  color: black;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  color: #451E04;
+}
+
+.rowEven {
+  background-color: #FFF2D9;
+}
+
+.rowOdd {
+  background-color: #FFFEFC;
+}
+
+.actionButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #550338;
+  margin: 0 5px;
+}
+
+.actionButton:hover {
+  color: #5a2a0a;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+.paginationText {
+  color: black; /* Cor do texto ajustada para preto */
+}
+
+.pagination button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #451E04;
+}
+
+.pagination button:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pageInput {
+  width: 50px;
+  padding: 0.25rem;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
