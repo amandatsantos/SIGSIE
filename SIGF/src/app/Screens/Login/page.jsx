@@ -16,53 +16,38 @@ function LoginPage() {
   async function handleSubmit(event) {
     event.preventDefault();
     console.log("Enviando login...");
-  
+
     const formData = new FormData(event.target);
     const email = formData.get("email");
     const password = formData.get("password");
-<<<<<<< HEAD
 
-=======
-  
     console.log("Dados coletados:", { email, password });
-  
->>>>>>> 246b9e2a3cc321c4d3a0bb475b45b2b371f0782e
     try {
       const response = await fetch("http://localhost:5665/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password }), // Corrigido para "password"
       });
-<<<<<<< HEAD
 
-      const data = await response.json();
-
-      if (response.ok) {
-        router.push("/Screens/CadastroUsuario"); // Redireciona para a home
-      } else {
-        setError(data.message || "Erro ao fazer login");
-      }
-    } catch (err) {
-      console.error("Erro ao fazer login:", err);
-      alert("Erro ao fazer login!")
-=======
-  
       console.log("Resposta recebida:", response);
-  
+
       if (!response.ok) {
-        throw new Error("Erro ao fazer login");
+        const errorData = await response.json();
+        console.error("Erro ao fazer login:", errorData);
+        setError(errorData.message || "Erro ao fazer login"); // Exibe a mensagem de erro do backend
+        return;
       }
-  
+
       const data = await response.json();
       console.log("Login bem-sucedido:", data);
-  
+
       // Redireciona para o dashboard após o login
-      router.push("/dashboard");
+      router.push("/Screens/Dashboard");
     } catch (error) {
       console.error("Erro:", error.message);
->>>>>>> 246b9e2a3cc321c4d3a0bb475b45b2b371f0782e
+      setError("Erro ao fazer login. Por favor, tente novamente.");
     }
   }
 
@@ -88,7 +73,7 @@ function LoginPage() {
             <InputField
               label="Senha"
               placeholder="Digite sua senha"
-              name="password"
+              name="password" // Corrigido para "password"
               type="password"
               error=""
             />

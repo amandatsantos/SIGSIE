@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 const sessionStore = new MySQLStore({
     host: "localhost",
     user: "root",
-    password: "root",
+    password: "1029384756",
     database:"bdsig",
     clearExpired: true,
     checkExpirationInterval: 900000, // 15 minutos

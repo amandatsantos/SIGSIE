@@ -6,7 +6,7 @@ const { DB_HOST, DB_USER, DB_PASSWORD, DB_DATABASE } = process.env;
 const pool = mysql.createPool({
   host: DB_HOST || 'localhost',
   user: DB_USER || 'root',
-  password: DB_PASSWORD || 'root',
+  password: DB_PASSWORD || '1029384756',
   database: DB_DATABASE || 'dbsig',
   waitForConnections: true,
   connectionLimit: 10,

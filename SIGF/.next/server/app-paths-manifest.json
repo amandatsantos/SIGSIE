@@ -1,0 +1,6 @@
+{
+  "/Screens/Login/page": "app/Screens/Login/page.js",
+  "/Screens/Relatorios/page": "app/Screens/Relatorios/page.js",
+  "/Screens/Dashboard/page": "app/Screens/Dashboard/page.js",
+  "/Screens/Nossos_Chocolates/page": "app/Screens/Nossos_Chocolates/page.js"
+}

@@ -9,7 +9,7 @@ async function initializeDatabase() {
     const connection = await mysql.createConnection({
       host: DB_HOST || 'localhost',
       user: DB_USER || 'root',
-      password: DB_PASSWORD || 'root',
+      password: DB_PASSWORD || '1029384756',
     });
 
     // Criar o banco de dados se não existir

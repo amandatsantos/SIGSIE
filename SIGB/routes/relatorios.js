@@ -15,14 +15,19 @@ const router = express.Router();
 router.get("/relatorio", async (req, res) => {
   try {
     const [results] = await pool.query("SELECT * FROM relatorio WHERE id = 1");
-    res.json(results);
+    if (results.length > 0) {
+      // A resposta será o primeiro item do array de resultados
+      res.json(results[0]);
+    } else {
+      res.status(404).json({ error: "Métricas não encontradas" });
+    }
   } catch (err) {
     console.error("Erro ao buscar os relatórios:", err);
     res.status(500).json({ error: "Erro interno do servidor", details: err.message });
   }
 });
 
-const updateField = async (req, res, field) => {
+  const updateField = async (req, res, field) => {
   const value = req.body[field];
 
   if (value === undefined || typeof value !== "number") {

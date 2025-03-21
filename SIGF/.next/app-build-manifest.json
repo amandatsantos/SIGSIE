@@ -1,0 +1,34 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/Screens/Login/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Screens/Login/page.css",
+      "static/chunks/app/Screens/Login/page.js"
+    ],
+    "/Screens/Dashboard/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Screens/Dashboard/page.css",
+      "static/chunks/app/Screens/Dashboard/page.js"
+    ],
+    "/Screens/Relatorios/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Screens/Relatorios/page.css",
+      "static/chunks/app/Screens/Relatorios/page.js"
+    ],
+    "/Screens/Nossos_Chocolates/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/Screens/Nossos_Chocolates/page.css",
+      "static/chunks/app/Screens/Nossos_Chocolates/page.js"
+    ]
+  }
+}

@@ -1,0 +1,199 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/Componentes/FormContainer/FormContainer.css ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 460px;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+  font-family: 'Spectral', serif;
+  font-size: 40px;
+  color: #5a3826;
+  text-align: center;
+}
+
+/*!**************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/Componentes/Input/InputField.css ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************/
+.input-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 75%;
+}
+.input-field-label {
+  font-family: 'Spectral', serif;
+  font-size: 12px;
+  color: #333;
+}
+.input-field-wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #5a3826;
+  border-radius: 10px;
+  padding: 6px;
+  background: transparent !important;
+  outline: none;
+}
+.input-field-icon {
+  margin-right: 8px;
+  color: #5a3826;
+}
+.input-field-input {
+  border: none;
+  outline: none;
+  font-family: 'Spectral', serif;
+  font-size: 12px;
+  flex: 1 1;
+  background: transparent !important;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/Componentes/BotaoConfirmar/BotaoConfirmar.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+.button-confirmar {
+  width: 35%; /* Ajuste conforme necessário */
+  max-width: 250px; /* Define um limite para o tamanho */
+  margin: 5px auto; /* Centraliza os botões */
+  display: block;
+  background-color: #5a3826;
+  color: white;
+  font-family: 'Spectral', serif;
+  font-size: 12px !important;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+.button-confirmar:hover {
+  background-color: #3e2519;
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/Componentes/BotaoCadastrar/BotaoCadastrar.css ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************/
+.button-cadastrar {
+  width: 35%; /* Ajuste conforme necessário */
+  max-width: 250px; /* Define um limite para o tamanho */
+  margin: 5px auto; /* Centraliza os botões */
+  display: block;
+  background-color: #EFD973;
+  color: white;
+  font-family: 'Spectral', serif;
+  font-size: 12px !important;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+.button-cadastrar:hover {
+  background-color: #D4C35D;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/Componentes/ToggleSwitch/ToggleSwitch.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+.toggle-switch-container {
+  width: 25px; /* Metade do tamanho original */
+  height: 12px; /* Metade do tamanho original */
+  background-color: #ccc;
+  border-radius: 12px; /* Metade do tamanho original */
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.toggle-switch-knob {
+  width: 9px; /* Metade do tamanho original */
+  height: 9px; /* Metade do tamanho original */
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1.5px; /* Metade do tamanho original */
+  left: 2px; /* Metade do tamanho original */
+  transition: transform 0.3s;
+}
+.toggle-switch-container.on {
+  background-color: #5a3826;
+}
+.toggle-switch-container.on .toggle-switch-knob {
+  transform: translateX(13px); /* Metade do tamanho original */
+}
+/*!*****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/Screens/Login/style.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************/
+.page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    background-color: #f7e7d4; /* Cor de fundo principal */
+    background-image: 
+        url('https://i.postimg.cc/90ptcCXw/Adobe-Express-file.png'), 
+        url('https://i.postimg.cc/KvT8d1gD/Adobe-Express-file-1.png');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position:
+        top right, 
+        bottom left;
+    background-size: 500px auto;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.ts {
+    display: flex;
+    align-items: center;/* Alinha os itens verticalmente ao centro */
+    gap: 10px;
+    margin-left: 60px;
+}
+.ts-label{
+    font-size: 12px;
+    color: #333;
+    font-family: 'Spectral', serif !important;
+    margin-right: 40px;
+}
+.divider {
+  width: 100%;
+  opacity: 30%;
+  border: none;
+  border-top: 1px solid #5a3826; /* Cor da linha */
+  margin: 16px 0; /* Espaçamento acima e abaixo */
+}
+.Logo{
+    width: 20%;
+    padding: 10px;
+}

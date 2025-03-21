@@ -1,0 +1,295 @@
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/app/Screens/Nossos_Chocolates/page.module.css ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
+/* Estilos para o Swiper */
+.page_customSwiper__x5Cny {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.page_carouselImage__ta3RK {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+}
+
+/* Estilos para a paginação e navegação */
+.page_swiper-pagination-bullet__hjJWm {
+  background: #EFD973; /* Cor dos bullets */
+}
+
+.page_swiper-pagination-bullet-active___0Zu6 {
+  background: #451E04; /* Cor do bullet ativo */
+}
+
+.page_swiper-button-next__RNmxJ,
+.page_swiper-button-prev__V3Bqs {
+  color: #451E04; /* Cor das setas de navegação */
+}
+
+.page_container__rzUlt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  background-size: 80%;
+
+}
+
+.page_header__BapJV {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background-color: #EFD973;
+  position: relative;
+  max-height: 70px; /* Altura máxima do header */
+}
+
+.page_logo__MyyVH img {
+  height: 110px; /* Aumente o tamanho da logo */
+  width: auto; /* Mantém a proporção da imagem */
+  object-fit: contain; /* Garante que a imagem não distorça */
+  cursor: pointer;
+}
+
+.page_nav__dcwP0 {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  justify-content: center; /* Centraliza os itens do menu */
+}
+
+.page_loginButton__2I5PT {
+  padding: 0.75rem 1.5rem; /* Botão um pouco maior */
+  background-color: #451E04;
+  border: none;
+  border-radius: 8px; /* Raio de borda de 8px */
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem; /* Posiciona o botão no canto direito */
+  font-size: 1rem; /* Tamanho da fonte */
+}
+
+.page_menu__A_P7e {
+  list-style: none;
+  display: flex;
+  gap: 2rem; 
+  margin: 0;
+  padding: 0;
+}
+.page_menu__A_P7e li {
+  color: #451E04; /* Cor igual ao botão de login */
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.page_searchContainer__Qn1qF {
+  width: 100%;
+  padding: 1rem;
+  text-align: right;
+  padding-right: 12rem;
+}
+
+.page_searchWrapper__tZWJJ {
+  display: inline-flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+}
+
+.page_searchIcon__zVytG {
+  color: #451E04; /* Cor do ícone igual ao botão de login */
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+
+.page_searchInput__dzdbf {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #451E04; /* Cor do texto igual ao botão de login */
+  width: 200px; /* Largura da caixa de pesquisa */
+  background-color: transparent; /* Remove o fundo da caixa de texto */
+}
+
+
+.page_searchInput__dzdbf::placeholder {
+  color: #451E04; /* Cor do placeholder igual ao botão de login */
+}
+
+
+.page_main__lfO9G {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+}
+
+.page_hero__KfdGp {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.page_carouselImage__ta3RK {
+  width: 90%; /* Reduz o tamanho da imagem */
+  height: auto;
+}
+
+/* Estilos para as seções */
+.page_section__NLYXh {
+    margin-bottom: 2rem;
+  }
+  
+  .page_section__NLYXh h2 {
+    color: #451E04;
+    font-size: 24px;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  
+  /* Estilos para o grid de imagens */
+  .page_grid__hmKkt {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .page_gridItem__MZI4j {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .page_image__BKfx8 {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+/* Estilos para o grid de produtos */
+.page_produtosGrid__YjQwK {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-gap: 1.5rem;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Estilos para cada card de produto */
+.page_produtoCard__crwgj {
+  background: white;
+  border-radius: 20px; /* Bordas arredondadas */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.page_produtoCard__crwgj:hover {
+  transform: translateY(-5px);
+}
+
+/* Container da imagem */
+.page_produtoImagemContainer__4Dau6 {
+  position: relative;
+  height: 200px; /* Altura fixa para o container da imagem */
+  overflow: hidden;
+}
+
+/* Estilos para a imagem */
+.page_produtoImagem__9iU4g {
+  width: 50%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem cubra o container */
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* Estilos para o título e descrição */
+.page_produtoInfo__RRm2m {
+  padding: 1rem;
+  text-align: center;
+  color: #451E04;
+}
+
+.page_produtoInfo__RRm2m h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.page_produtoInfo__RRm2m p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Estilos para os títulos das seções */
+.page_tituloSecao__3tork {
+  color: #451E04; /* Cor do botão de login */
+  font-size: 2rem;
+  text-align: left; /* Alinhado à esquerda */
+  margin: 2rem 0 1rem 1.5rem; /* Margem ajustada */
+}
+
+/* Estilos para o botão "Saiba Mais" */
+.page_saibaMaisContainer__WEGPi {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.page_saibaMaisButton__GNPpG {
+  padding: 0.75rem 1.5rem;
+  background-color: #451E04; /* Cor do botão de login */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.page_saibaMaisButton__GNPpG:hover {
+  background-color: #5a2a0a; /* Cor mais escura no hover */
+}
+
+.page_mensagemNenhumResultado__gUC36 {
+  text-align: center;
+  color: #451E04; /* Cor do texto */
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.page_produtoCard__crwgj.page_expanded__XMH_S {
+  transform: scale(1.05); /* Aumenta ligeiramente o tamanho do card */
+  transition: transform 0.3s ease;
+}
+
+.page_produtoDetalhes__EVIN4 {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.page_produtoDetalhes__EVIN4 h4 {
+  margin-bottom: 0.5rem;
+  color: #451E04;
+}
+
+.page_produtoDetalhes__EVIN4 ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.page_produtoDetalhes__EVIN4 ul li {
+  margin-bottom: 0.5rem;
+  color: #451E04;
+}

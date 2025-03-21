@@ -7,7 +7,8 @@ import { useRouter } from 'next/navigation';
 export default function Relatorios() {
   const router = useRouter();
   const [metrics, setMetrics] = useState({
-    vendas: 0,
+    id: 1,
+    venda: 0,
     faturamento: 0,
     estoque: 0,
     producao: 0,
@@ -20,8 +21,16 @@ export default function Relatorios() {
   const fetchMetrics = async () => {
     try {
       const response = await fetch('http://localhost:5665/relatorios/relatorio');
+      if (!response.ok) throw new Error('Erro ao buscar métricas');
+  
       const data = await response.json();
-      setMetrics(data);
+      console.log('Resposta do backend:', data); // Debug para verificar a estrutura
+  
+      if (data && typeof data === 'object') {
+        setMetrics(data); // Define o objeto diretamente
+      } else {
+        console.error("O backend retornou um formato inesperado:", data);
+      }
     } catch (error) {
       console.error('Erro ao buscar métricas:', error);
     }
@@ -34,7 +43,7 @@ export default function Relatorios() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ metric: 'vendas', value }),
+        body: JSON.stringify({ venda: Number(value) }),
       });
       if (response.ok) {
         fetchMetrics(); // Atualiza as métricas após a inserção
@@ -53,7 +62,7 @@ export default function Relatorios() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ metric: 'faturamentoTotal', value }),
+        body: JSON.stringify({ faturamento: Number(value) }),
       });
       if (response.ok) {
         fetchMetrics(); // Atualiza as métricas após a inserção
@@ -72,7 +81,7 @@ export default function Relatorios() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ metric: 'estoque', value }),
+        body: JSON.stringify({ estoque: Number(value) }),
       });
       if (response.ok) {
         fetchMetrics(); // Atualiza as métricas após a inserção
@@ -91,7 +100,7 @@ export default function Relatorios() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ metric: 'producao', value }),
+        body: JSON.stringify({producao: Number(value) }),
       });
       if (response.ok) {
         fetchMetrics(); // Atualiza as métricas após a inserção
@@ -145,7 +154,7 @@ export default function Relatorios() {
         <div className={styles.metricsGrid}>
           <div className={styles.metricBox}>
             <p className={styles.metricLabel}>Vendas</p>
-            <p className={`${styles.metricValue} ${styles.pink}`}>{metrics.vendas}</p>
+            <p className={`${styles.metricValue} ${styles.pink}`}>{metrics.venda}</p>
           </div>
           <div className={styles.metricBox}>
             <p className={styles.metricLabel}>Faturamento total</p>
@@ -185,20 +194,20 @@ export default function Relatorios() {
         <div className={styles.reportTitle}>Relatório Mensal</div>
         <div className={styles.reportGrid}>
           <div className={styles.metricBox}>
+            <p className={styles.metricLabel}>Venda mensal</p>
+            <p className={`${styles.metricValue} ${styles.purple}`}>{metrics.venda}</p>
+          </div>
+          <div className={styles.metricBox}>
+            <p className={styles.metricLabel}>Faturamento mensais</p>
+            <p className={`${styles.metricValue} ${styles.pink}`}>{metrics.faturamento}</p>
+          </div>
+          <div className={styles.metricBox}>
             <p className={styles.metricLabel}>Estoque mensal</p>
             <p className={`${styles.metricValue} ${styles.purple}`}>{metrics.estoque}</p>
           </div>
           <div className={styles.metricBox}>
-            <p className={styles.metricLabel}>Vendas mensais</p>
-            <p className={`${styles.metricValue} ${styles.pink}`}>{metrics.vendas}</p>
-          </div>
-          <div className={styles.metricBox}>
             <p className={styles.metricLabel}>Produção mensal</p>
-            <p className={`${styles.metricValue} ${styles.purple}`}>{metrics.producao}</p>
-          </div>
-          <div className={styles.metricBox}>
-            <p className={styles.metricLabel}>Faturamento</p>
-            <p className={`${styles.metricValue} ${styles.green}`}>{metrics.faturamento}</p>
+            <p className={`${styles.metricValue} ${styles.green}`}>{metrics.producao}</p>
           </div>
         </div>
       </div>
